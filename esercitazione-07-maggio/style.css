@@ -1,0 +1,81 @@
+/* esercizio-1-e-3 */
+body{
+    background-color: rgb(238, 196, 145);
+}
+
+.titolo{
+    display: flex;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 50px;
+    color: #a52a2a;
+}
+
+.sottotitolo{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+.paragrafo{
+    text-align: center;
+    text-decoration: line-through;
+}
+
+.paragrafo:hover{
+    text-decoration: none;
+    transform: scale(1.5);
+    color: #0000ff;
+    cursor: grab;
+}
+
+.lista{
+    width: 10%;
+    box-shadow: 0px 0px 10px 2px;
+}
+
+.primo-link{
+    text-decoration: none;
+}
+
+.secondo-link{
+    text-decoration: line-through;
+}
+
+/* esercizio-2 */
+
+.quadrato{
+    background-color: #a52a2a;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* esercizio-5 */
+
+.rettangolo {
+    background-color: #0000ff;
+    width: 50%;
+    height: 70px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+}
+
+.container {
+    display: flex;
+}
+
+/* esercizio-4-e-6 */
+@media only screen and (min-width: 1024px){
+    body{
+        background-color: #5f9ea0;
+    }
+    .rettangolo{
+        width: 25%;
+    }
+}
