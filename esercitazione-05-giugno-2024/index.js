@@ -16,7 +16,7 @@ parent.addEventListener("click", (event) => {
 })
 
 let modal = document.getElementById("myModal");
-let close = document.querySelector('.close');
+let closeModal = document.querySelector('.close');
 let yes = document.querySelector('.yes');
 yes.textContent = 'Yes';
 let no = document.querySelector('.no');
