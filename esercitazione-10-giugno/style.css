@@ -1,0 +1,122 @@
+body {
+    background-color: rgba(10, 10, 10, 0.975);
+}
+
+/* Category */
+.category {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.categoryBtn {
+    width: 120px;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.btnPopular {
+    width: 120px;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+/* end-category */
+
+.container {
+    display: flex
+}
+
+.listContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.listItems {
+    background-size: cover;
+    background-position: center;
+    width: 270px;
+    height: 200px;
+    margin: 10px;
+    margin-bottom: 60px;
+    position: relative;
+    opacity: 0.8;
+}
+
+.listItems:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition-duration: 0.5s
+}
+
+.backImg {
+    width: 150px;
+}
+
+.titleTxt {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: -65px;
+    color: bisque;
+}
+
+.posterImg {
+    width: 120px;
+    height: 170px;
+    position: absolute;
+    right: 70px;
+    top: 15px;
+}
+
+.containerBar {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    align-items: center;
+}
+
+.containerBar h1 {
+    position: absolute;
+    left: 70px;
+}
+
+.searchBar {
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    padding-left: 7px;
+}
+
+.searchBar:focus {
+    outline: none;
+}
+
+/* button page */
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 20vh;
+}
+
+.buttonback {
+    width: 60px;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.button_next {
+    width: 60px;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 10px;
+}
