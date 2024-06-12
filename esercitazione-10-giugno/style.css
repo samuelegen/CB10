@@ -23,6 +23,13 @@ body {
     font-size: 15px;
 }
 
+.btnNow {
+    width: 120px;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 15px; 
+}
+
 /* end-category */
 
 .container {

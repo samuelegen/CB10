@@ -12,11 +12,14 @@ containerBtn.append(Btn_back, Btn_next);
 const containerCat = document.querySelector('.category');
 const btnCategory = document.createElement('button');
 const btnPopular = document.createElement('button');
+const btnNow = document.createElement('button');
 btnPopular.className = 'btnPopular';
 btnPopular.textContent = 'Popular'
 btnCategory.className = 'categoryBtn';
 btnCategory.textContent = 'Top Rated';
-containerCat.append(btnCategory, btnPopular);
+btnNow.className = 'btnNow';
+btnNow.textContent = 'Upcoming'
+containerCat.append(btnCategory, btnPopular, btnNow);
 
 let page = 1;
 let endpoint = "movie/popular"
@@ -35,11 +38,13 @@ Btn_next.addEventListener("click", () => {
 });
 
 btnCategory.addEventListener("click", () => {
-    endpoint = "movie/top_rated";
-    render(endpoint, page);
+    render("movie/top_rated", page);
 })
 
 btnPopular.addEventListener("click", () => {
-	endpoint = "movie/popular";
 	render(endpoint, page);
+})
+
+btnNow.addEventListener("click", () => {
+	render('movie/upcoming', page);
 })
