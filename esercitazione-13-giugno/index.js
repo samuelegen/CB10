@@ -1,4 +1,3 @@
-import "./error.js";
 const inputTitleEl = document.querySelector(".title");
 const inputPriceEl = document.querySelector(".price");
 const inputDescriptionEl = document.querySelector(".description");
