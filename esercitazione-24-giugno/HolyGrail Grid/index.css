@@ -1,0 +1,33 @@
+.app {
+	display: grid;
+	justify-items: center;
+	grid-template-columns: 150px 1fr 150px;
+	grid-template-rows: 100px 1fr 30px;
+	grid-template: auto 1fr auto / auto 1fr auto;
+	grid-template-areas:
+		"header header header"
+		"sinistra main destra"
+		"footer footer footer";
+	min-height: 97vh;
+}
+
+.header {
+	padding: 2rem;
+	grid-area: header;
+}
+
+.left {
+	grid-area: sinistra;
+}
+
+.main {
+	grid-area: main;
+}
+
+.right {
+	grid-area: destra;
+}
+
+.footer {
+	grid-area: footer;
+}
