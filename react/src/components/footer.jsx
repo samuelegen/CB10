@@ -3,8 +3,8 @@ function Footer() {
 
 	return (
 		<footer className="footer">
-			<div className="container">
-				<div className="wrapper">
+			<div className="containerFooter">
+				<div className="footerItems">
 					<div className="logo">Logo</div>
                     <nav className="nav">
                         {menuData.map((menu, index) => (
@@ -25,10 +25,10 @@ function Footer() {
 function getMenuHTML() {
 	return [
 		{
-			label: "About us",
+			label: "Info su di noi",
 			children: [
 				{ label: "Company info" },
-				{ label: "Careers" },
+				{ label: "Carrer" },
 				{ label: "Altre cose" },
 			],
 		},
@@ -36,9 +36,9 @@ function getMenuHTML() {
 		{
 			label: "About us",
 			children: [
-				{ label: "Company info" },
-				{ label: "Careers" },
-				{ label: "Altre cose" },
+				{ label: "Contatti" },
+				{ label: "Store" },
+				{ label: "Nuovi prodotti" },
 			],
 		},
 	];
@@ -47,8 +47,8 @@ function getMenuHTML() {
 function ItemMenu(props) {
     const { label, href = '#' } = props;
     return (
-        <li className="item">
-            <a href={href}>{label}</a>
+        <li className="item" href={href}>
+            <a href="#">{label}</a>
         </li>
     )
 }

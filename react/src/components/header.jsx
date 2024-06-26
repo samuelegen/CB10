@@ -1,5 +1,4 @@
 function Header() {
-	console.log("header");
 	return (
 		<header>
 			<div className="container">
@@ -25,7 +24,7 @@ function Menu() {
 }
 
 function MenuItem(props) {
-	const { label, href = "#" } = props;
+	const { label } = props;
 	return (
 		<li className="item">
 			<a href="#">{label}</a>
