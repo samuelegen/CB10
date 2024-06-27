@@ -1,9 +1,9 @@
 import post from "./data.json"
 
 function Main() {
-    console.log(post)
+    // console.log(post)
 
-    const firstsEl = post.slice(0, 5)
+    const firstsEl = post.slice(0, 8)
     return (
         <main className="mainContainer">
             <div className="data">

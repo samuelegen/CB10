@@ -7,8 +7,8 @@ function Footer() {
 				<div className="footerItems">
 					<div className="logo">Logo</div>
                     <nav className="nav">
-                        {menuData.map((menu, index) => (
-                            <ul key={index} className="menu">
+                        {menuData.map((menu, items) => (
+                            <ul key={items} className="menu">
                                 <li className="menu-label">{menu.label}</li>
                                 {menu.children.map((item, itemIndex) => (
                                     <ItemMenu key={itemIndex} label={item.label} />

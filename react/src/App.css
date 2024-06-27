@@ -1,67 +1,90 @@
 body {
-    background-color: rgba(0, 0, 255, 0.238);
-    margin: 0;
+	background-color: rgba(0, 0, 255, 0.238);
+	margin: 0;
 }
 
 /* Header */
 .wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    color: antiquewhite;
-    margin-bottom: 2rem;
-    padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: black;
+	color: antiquewhite;
+	margin-bottom: 2rem;
+	padding: 20px;
 }
 
-.logo{
-    font-size: 30px;
-    font-weight: bold;
+.logo {
+	font-size: 30px;
+	font-weight: bold;
 }
 
 .item {
-    list-style: none;
+	list-style: none;
 }
 
 .item a {
-    text-decoration: none;
-    color: antiquewhite;
+	text-decoration: none;
+	color: antiquewhite;
 }
 
 .item a:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 /* Main */
 .data {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 50px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 50px;
 }
 .post {
-    width: 15rem;
-    padding: 15px;
-    border: 1px solid black;
-    border-radius: 16px;
-    text-align: center;
+	width: 15rem;
+	padding: 15px;
+	border: 1px solid black;
+	border-radius: 16px;
+	text-align: center;
 }
 
 /* Footer */
 .footerItems {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    color: antiquewhite;
-    margin-top: 2rem;
-    padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: black;
+	color: antiquewhite;
+	margin-top: 2rem;
+	padding: 20px;
 }
 
 .nav {
-    display: flex;
+	display: flex;
 }
 
 .menu-label {
-    color: brown;
+	color: brown;
+}
+
+/* Counter */
+.content {
+    margin-top: 40px;    
+}
+
+.Counter {
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+.btn {
+    border-radius: 0.4rem;
+    background: transparent;
+    border: 1px solid #222;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 2;
+    padding: 0 1rem;
 }
