@@ -1,0 +1,25 @@
+body {
+	width: 100%;
+	height: 100vh;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+	width: 280px;
+	height: 60vh;
+  border: 1px solid burlywood;
+}
+
+.container img {
+  width: 200px;
+  height: 300px;
+}
