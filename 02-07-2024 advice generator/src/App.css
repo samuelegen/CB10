@@ -1,0 +1,47 @@
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(67, 70, 87);
+}
+
+.container {
+  background-color: rgb(59, 62, 76);
+  height: 40vh;
+  border: 1px solid black;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+h1 {
+  font-size: 20px;
+  color: #80eea3;
+}
+
+p {
+  color: aliceblue;
+  padding: 20px;
+}
+
+.pattern {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.btn {
+  position: absolute;
+  bottom: 150px;
+  width: 30px;
+  filter: invert(92%) sepia(9%) saturate(2195%) hue-rotate(71deg) brightness(101%) contrast(87%);
+}
+
+.btn:hover {
+  cursor: pointer;
+  
+}
