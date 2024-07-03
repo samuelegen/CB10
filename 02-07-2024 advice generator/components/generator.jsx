@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const phrases = [
 	{
 		id: 116,
-		advice: "One of the top five regrets people have is that they didn't stay in contact with friends.",
+		advice:
+			"One of the top five regrets people have is that they didn't stay in contact with friends.",
 	},
 	{ id: 12, advice: "Always block trolls." },
 	{
 		id: 200,
-		advice: "Sarcasm is the lowest form of wit. Employ correctly with apt timing.",
+		advice:
+			"Sarcasm is the lowest form of wit. Employ correctly with apt timing.",
 	},
 	{
 		id: 142,
@@ -36,9 +38,20 @@ function Generator() {
 	return (
 		<div className="container">
 			<h1>Advice #{phrases[currentIndex].id}</h1>
-            <p>{phrases[currentIndex].advice}</p>
-			<img className='pattern' src="./components/img/pattern-divider-desktop.svg" alt="pattern" />
-			<img className='btn' onClick={handleClick} src="./components/img/icon.svg" alt="icon" />
+			<p>{phrases[currentIndex].advice}</p>
+			<img
+				className="pattern"
+				src="./components/img/pattern-divider-desktop.svg"
+				alt="pattern"
+			/>
+			<div className="btnContainer">
+				<img
+					className="btn"
+					onClick={handleClick}
+					src="./components/img/icon.svg"
+					alt="icon"
+				/>
+			</div>
 		</div>
 	);
 }
