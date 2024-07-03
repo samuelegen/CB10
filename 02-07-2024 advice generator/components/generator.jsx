@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import styles from "../src/App.module.css";
 const phrases = [
 	{
 		id: 116,
@@ -36,17 +36,17 @@ function Generator() {
 	};
 
 	return (
-		<div className="container">
+		<div className={styles.container}>
 			<h1>Advice #{phrases[currentIndex].id}</h1>
 			<p>{phrases[currentIndex].advice}</p>
 			<img
-				className="pattern"
+				className={styles.pattern}
 				src="./components/img/pattern-divider-desktop.svg"
 				alt="pattern"
 			/>
-			<div className="btnContainer">
+			<div className={styles.btnContainer}>
 				<img
-					className="btn"
+					className={styles.btn}
 					onClick={handleClick}
 					src="./components/img/icon.svg"
 					alt="icon"
