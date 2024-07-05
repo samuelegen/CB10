@@ -27,6 +27,7 @@ body {
 
 .slider {
 	-webkit-appearance: none;
+    appearance: none;
 	width: 200px;
 	height: 8px;
 	background: #ddd;
