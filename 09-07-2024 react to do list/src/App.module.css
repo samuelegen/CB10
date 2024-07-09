@@ -1,0 +1,75 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.557);
+}
+
+.container {
+  width: 500px;
+  border: 2px solid rgb(23, 20, 19);
+  background-color: antiquewhite;
+  border-radius: 16px;
+  box-shadow: 0px 0px 60px 0px;
+}
+
+.container label {
+  margin-left: 5px;
+}
+
+.container h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.container input {
+  height: 25px;
+  border-radius: 16px;
+  border: none;
+  outline: none;
+  padding-left: 12px;
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+}
+
+.btnAdd {
+  margin-top: 30px;
+  height: 30px;
+  border-radius: 16px;
+  border: none;
+}
+
+.list {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.list img {
+  position: absolute;
+  right: 180px;
+}
+
+.city {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.city button {
+  height: 25px;
+  width: 70px;
+  border-radius: 16px;
+  border: none;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
