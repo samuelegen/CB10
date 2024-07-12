@@ -1,103 +1,54 @@
-import ethereum from './assets/image/images/image-equilibrium.jpg'
+import imageCard from "./assets/image/images/image-equilibrium.jpg";
+import user from "./assets/image/images/image-avatar.png";
 function App() {
-  return (
-    <>
-    <a href="#" className="block rounded-lg p-4 w-80 h-2/4 bg-[#15253F] shadow-2xl">
-  <img
-    alt="logo"
-    src={ethereum}
-    className="h-56 w-full rounded-md object-cover"
-  />
+	return (
+		<>
+			<a
+				href="#"
+				className="block rounded-lg p-4 w-60 h-2/4 bg-[#15253F] shadow-2xl"
+			>
+				<img
+					alt="logo"
+					src={imageCard}
+					className="h-56 w-full rounded-md object-cover"
+				/>
 
-  <div className="mt-2">
-    <dl>
-      <div>
-        <dt className="sr-only">Price</dt>
+				<div className="mt-2">
+					<dl>
+						<div>
+							<dd className="text-[#F5FBFF] py-1.5 ">Equilibrium #3429</dd>
+						</div>
 
-        <dd className="text-sm text-gray-500">Equilibrium #3429</dd>
-      </div>
+						<div>
+							<dt className="sr-only">Address</dt>
 
-      <div>
-        <dt className="sr-only">Address</dt>
+							<dd className="text-[#455876] py-1">
+								Our Equilibrium collection promotes balance and calm.
+							</dd>
+						</div>
+					</dl>
 
-        <dd className="font-medium">Our Equilibrium collection promotes balance and calm.</dd>
-      </div>
-    </dl>
+					<span className="flex items-center">
+						<span className="h-px flex-1 bg-[#455876] mt-3"></span>
+					</span>
 
-    <div className="mt-6 flex items-center gap-8 text-xs">
-      <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-        <svg
-          className="size-4 text-indigo-700"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
-          />
-        </svg>
-
-        <div className="mt-1.5 sm:mt-0">
-          <p className="text-gray-500">Parking</p>
-
-          <p className="font-medium">2 spaces</p>
-        </div>
-      </div>
-
-      <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-        <svg
-          className="size-4 text-indigo-700"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-          />
-        </svg>
-
-        <div className="mt-1.5 sm:mt-0">
-          <p className="text-gray-500">Bathroom</p>
-
-          <p className="font-medium">2 rooms</p>
-        </div>
-      </div>
-
-      <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-        <svg
-          className="size-4 text-indigo-700"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-          />
-        </svg>
-
-        <div className="mt-1.5 sm:mt-0">
-          <p className="text-gray-500">Bedroom</p>
-
-          <p className="font-medium">4 rooms</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</a>
-    </>
-  )
+					<div className="mt-6 flex items-center gap-8 text-xs">
+						<div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2 flex items-center">
+							<img
+								className="w-7 border-2 border-solid border-white rounded-full mr-2"
+								src={user}
+								alt="user"
+							/>
+							<p className="flex gap-2 text-[#455876] text-sm">
+								Creation of
+								<p className="text-[#F5FBFF] text-sm">Jules Wyvern</p>
+							</p>
+						</div>
+					</div>
+				</div>
+			</a>
+		</>
+	);
 }
 
-export default App
+export default App;
