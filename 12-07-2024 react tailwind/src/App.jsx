@@ -1,5 +1,5 @@
 import imageCard from "./assets/image/images/image-equilibrium.jpg";
-import user from "./assets/image/images/image-avatar.png";
+import user from "./assets/image/images/freesvgorg44928.png";
 function App() {
 	return (
 		<>
@@ -33,7 +33,7 @@ function App() {
 					</span>
 
 					<div className="mt-6 flex items-center gap-8 text-xs">
-						<div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2 flex items-center">
+						<div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-4 flex items-center">
 							<img
 								className="w-7 border-2 border-solid border-white rounded-full mr-2"
 								src={user}
@@ -41,7 +41,7 @@ function App() {
 							/>
 							<p className="flex gap-2 text-[#455876] text-sm">
 								Creation of
-								<p className="text-[#F5FBFF] text-sm">Jules Wyvern</p>
+								<p className="text-[#F5FBFF] text-sm">Samuele</p>
 							</p>
 						</div>
 					</div>
