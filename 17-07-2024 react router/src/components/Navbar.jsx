@@ -1,6 +1,6 @@
 import React from "react";
 
-function Navbar() {
+function Navbar({currentPage}) {
 	return (
 		<div>
 			<header className="bg-slate-200">
@@ -13,9 +13,9 @@ function Navbar() {
 						<div className="hidden md:block">
 							<nav aria-label="Global">
 								<ul className="flex items-center gap-6 text-sm">
-									<li className="hover:scale-110 ease-out duration-300">
+									<li className={`hover:scale-110 ease-out duration-300 ${currentPage === 'home' ? 'text-black font-bold' : '"text-gray-500'}`}>
 										<a
-											className="text-gray-500 transition hover:text-gray-500/75"
+											className= "transition"
 											href="/"
 										>
 											{" "}
@@ -23,9 +23,9 @@ function Navbar() {
 										</a>
 									</li>
 
-									<li className="hover:scale-110 ease-out duration-300">
+									<li className={`hover:scale-110 ease-out duration-300 ${currentPage === 'history' ? 'text-black font-bold' : '"text-gray-500'}`}>
 										<a
-											className="text-gray-500 transition hover:text-gray-500/75"
+											className="transition"
 											href="/history"
 										>
 											{" "}
@@ -33,18 +33,18 @@ function Navbar() {
 										</a>
 									</li>
 
-									<li className="hover:scale-110 ease-out duration-300">
+									<li className={`hover:scale-110 ease-out duration-300 ${currentPage === 'favorites' ? 'text-black font-bold' : '"text-gray-500'}`}>
 										<a
-											className="text-gray-500 transition hover:text-gray-500/75"
-											href="#"
+											className="transition"
+											href="/favorites"
 										>
 											{" "}
-											Projects{" "}
+											Favorites{" "}
 										</a>
 									</li>
 
-									<li className="hover:scale-110 ease-out duration-300">
-										<a className="text-gray-800 transition font-bold" href="#">
+									<li className={`hover:scale-110 ease-out duration-300 ${currentPage === 'cart' ? 'text-black font-bold' : '"text-gray-500'}`}>
+										<a className="transition" href="/cart">
 											{" "}
 											Cart{" "}
 										</a>
