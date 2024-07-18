@@ -10,13 +10,20 @@ function Home() {
 				console.log(res);
 			});
 	}, []);
+
+    const addToCart = (item) => {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(item);
+        localStorage.setItem('cart', JSON.stringify(cart));
+    };
+
 	return (
 		<>
             <Navbar currentPage='home'/>
             <div className="flex flex-wrap mt-8 gap-3 justify-evenly">
                 {element.map((item) => (
                     <div key={item.id} className="group relative block overflow-hidden w-1/6">
-                        <div className="flex flex-col h-full border border-gray-100 bg-white">
+                        <div className="flex flex-col h-full border border-gray-300 bg-white">
                             <button className="absolute end-4 top-4 z-10 rounded-full bg-white p-1.5 text-gray-900 transition hover:text-gray-900/75">
                                 <span className="sr-only">Wishlist</span>
                                 <svg
@@ -48,14 +55,11 @@ function Home() {
                                     </h3>
                                     <p className="mt-1.5 text-sm text-gray-700">{`€${item.price}`}</p>
                                 </div>
-                                <form className="mt-4" onSubmit={(e) => {
-                                    e.preventDefault();
-                                    addToCart(item);
-                                }}>
-                                    <button className="block w-full rounded bg-yellow-400 p-4 text-sm font-medium transition hover:scale-105">
+                                <div className="mt-4">
+                                    <button onClick={() => addToCart(item)} className="block w-full rounded bg-yellow-400 p-4 text-sm font-medium transition hover:scale-105">
                                         Add to Cart
                                     </button>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
