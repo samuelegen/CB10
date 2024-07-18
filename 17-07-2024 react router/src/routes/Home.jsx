@@ -1,26 +1,75 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
+
 function Home() {
-	const [element, setElement] = useState([]);
-	useEffect(() => {
-		fetch("https://fakestoreapi.com/products")
-			.then((res) => res.json())
-			.then((res) => {
-				setElement(res);
-				console.log(res);
-			});
-	}, []);
+    const [element, setElement] = useState([]);
+    const [showAlert, setShowAlert] = useState(false);
+
+    useEffect(() => {
+        fetch("https://fakestoreapi.com/products")
+            .then((res) => res.json())
+            .then((res) => {
+                setElement(res);
+                console.log(res);
+            });
+    }, []);
 
     const addToCart = (item) => {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         cart.push(item);
         localStorage.setItem('cart', JSON.stringify(cart));
+        setShowAlert(true);
+        setTimeout(() => setShowAlert(false), 3000);
     };
 
-	return (
-		<>
+    return (
+        <>
             <Navbar currentPage='home'/>
             <div className="flex flex-wrap mt-8 gap-3 justify-evenly">
+                {showAlert && (
+                    <div role="alert" className="rounded-xl border border-gray-100 bg-white p-4 fixed bottom-5 left-1/2 transform -translate-x-1/2 z-50">
+                        <div className="flex items-start gap-4">
+                            <span className="text-green-600">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth="1.5"
+                                    stroke="currentColor"
+                                    className="h-6 w-6"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                    />
+                                </svg>
+                            </span>
+
+                            <div className="flex-1">
+                                <strong className="block font-medium text-gray-900">Item added to cart</strong>
+                                <p className="mt-1 text-sm text-gray-700">Your product has been added to the cart.</p>
+                            </div>
+
+                            <button 
+                                className="text-gray-500 transition hover:text-gray-600"
+                                onClick={() => setShowAlert(false)}
+                            >
+                                <span className="sr-only">Dismiss popup</span>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth="1.5"
+                                    stroke="currentColor"
+                                    className="h-6 w-6"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                )}
                 {element.map((item) => (
                     <div key={item.id} className="group relative block overflow-hidden w-1/6">
                         <div className="flex flex-col h-full border border-gray-300 bg-white">
@@ -56,7 +105,10 @@ function Home() {
                                     <p className="mt-1.5 text-sm text-gray-700">{`€${item.price}`}</p>
                                 </div>
                                 <div className="mt-4">
-                                    <button onClick={() => addToCart(item)} className="block w-full rounded bg-yellow-400 p-4 text-sm font-medium transition hover:scale-105">
+                                    <button 
+                                        onClick={() => addToCart(item)} 
+                                        className="block w-full rounded bg-yellow-400 p-4 text-sm font-medium transition hover:scale-105"
+                                    >
                                         Add to Cart
                                     </button>
                                 </div>
@@ -66,7 +118,7 @@ function Home() {
                 ))}
             </div>
         </>
-	);
+    );
 }
 
 export default Home;
