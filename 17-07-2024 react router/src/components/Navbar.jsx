@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom"
 
 function Navbar({currentPage}) {
 	return (
@@ -14,40 +15,40 @@ function Navbar({currentPage}) {
 							<nav aria-label="Global">
 								<ul className="flex items-center gap-6 text-sm">
 									<li className={`hover:scale-110 ease-out duration-300 ${currentPage === 'home' ? 'text-black font-bold' : '"text-gray-500'}`}>
-										<a
+										<NavLink
 											className= "transition"
-											href="/"
+											to="/"
 										>
 											{" "}
 											Home{" "}
-										</a>
+										</NavLink>
 									</li>
 
 									<li className={`hover:scale-110 ease-out duration-300 ${currentPage === 'history' ? 'text-black font-bold' : '"text-gray-500'}`}>
-										<a
+										<NavLink
 											className="transition"
-											href="/history"
+											to="/history"
 										>
 											{" "}
 											History{" "}
-										</a>
+										</NavLink>
 									</li>
 
 									<li className={`hover:scale-110 ease-out duration-300 ${currentPage === 'favorites' ? 'text-black font-bold' : '"text-gray-500'}`}>
-										<a
+										<NavLink
 											className="transition"
-											href="/favorites"
+											to="/favorites"
 										>
 											{" "}
 											Favorites{" "}
-										</a>
+										</NavLink>
 									</li>
 
 									<li className={`hover:scale-110 ease-out duration-300 ${currentPage === 'cart' ? 'text-black font-bold' : '"text-gray-500'}`}>
-										<a className="transition" href="/cart">
+										<NavLink className="transition" to="/cart">
 											{" "}
 											Cart{" "}
-										</a>
+										</NavLink>
 									</li>
 								</ul>
 							</nav>

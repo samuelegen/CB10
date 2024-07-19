@@ -1,26 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Navbar from "../components/Navbar";
+import { useProductContext } from "../providers/ProductContext";
 
 function Cart() {
-    const [cart, setCart] = useState([]);
+    const { products, setProducts } = useProductContext();
 
-    useEffect(() => {
-        const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-        setCart(storedCart);
-    }, []);
-
-    const removeFromCart = (id) => {
-        const updatedCart = cart.filter(item => item.id !== id);
-        setCart(updatedCart);
-        localStorage.setItem('cart', JSON.stringify(updatedCart));
+    const handleDelete = (id) => {
+        setProducts((prevState) => prevState.filter((product) => product.id != id));
     };
+
+    // useEffect(() => {
+    //     const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    //     setCart(storedCart);
+    // }, []);
+
+    // const removeFromCart = (id) => {
+    //     const updatedCart = cart.filter(item => item.id !== id);
+    //     setCart(updatedCart);
+    //     localStorage.setItem('cart', JSON.stringify(updatedCart));
+    // };
 
     return (
         <>
             <Navbar currentPage="cart" />
             <div className="flex flex-wrap mt-8 gap-3 justify-evenly">
-                {cart.length > 0 ? (
-                    cart.map((item) => (
+                {products.length > 0 ? (
+                    products.map((item) => (
                         <div key={item.id} className="group relative block overflow-hidden w-1/6">
                             <div className="flex flex-col h-full border border-gray-100 bg-white">
                                 <img
@@ -38,7 +43,7 @@ function Cart() {
                                     <button
                                         type="button"
                                         className="block w-full rounded bg-red-400 p-4 text-sm font-medium transition hover:scale-105"
-                                        onClick={(e) => removeFromCart(item.id)}
+                                        onClick={() => handleDelete(item.id)}
                                     >
                                         Remove from Cart
                                     </button>

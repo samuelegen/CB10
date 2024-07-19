@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Navbar from "../components/Navbar";
+import { useProductContext } from "../providers/ProductContext";
 
 function Home() {
     const [element, setElement] = useState([]);
     const [showAlert, setShowAlert] = useState(false);
+    const { setProducts } = useProductContext();
 
     useEffect(() => {
         fetch("https://fakestoreapi.com/products")
@@ -14,13 +16,20 @@ function Home() {
             });
     }, []);
 
-    const addToCart = (item) => {
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart.push(item);
-        localStorage.setItem('cart', JSON.stringify(cart));
+    const handleAdd = (product) => {
+        setProducts((prevState) => [...prevState, product]);
         setShowAlert(true);
-        setTimeout(() => setShowAlert(false), 3000);
+        setTimeout(() => setShowAlert(false), 3000)
     };
+
+    //Utilizzato per aggiungere gli elementi al carrello tramite local storage
+    // const addToCart = (item) => {
+    //     let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    //     cart.push(item);
+    //     localStorage.setItem('cart', JSON.stringify(cart));
+    //     setShowAlert(true);
+    //     setTimeout(() => setShowAlert(false), 3000);
+    // };
 
     return (
         <>
@@ -72,7 +81,7 @@ function Home() {
                 )}
                 {element.map((item) => (
                     <div key={item.id} className="group relative block overflow-hidden w-1/6">
-                        <div className="flex flex-col h-full border border-gray-300 bg-white">
+                        <div className="flex flex-col h-full border border-gray-300 bg-white rounded-2xl">
                             <button className="absolute end-4 top-4 z-10 rounded-full bg-white p-1.5 text-gray-900 transition hover:text-gray-900/75">
                                 <span className="sr-only">Wishlist</span>
                                 <svg
@@ -106,7 +115,7 @@ function Home() {
                                 </div>
                                 <div className="mt-4">
                                     <button 
-                                        onClick={() => addToCart(item)} 
+                                        onClick={() => handleAdd(item)} 
                                         className="block w-full rounded bg-yellow-400 p-4 text-sm font-medium transition hover:scale-105"
                                     >
                                         Add to Cart
