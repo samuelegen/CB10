@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import Navbar from "../components/Navbar";
-import { useProductContext } from "../providers/ProductContext";
+import { SetProductContext } from "../providers/ProductContext";
 
 function Home() {
     const [element, setElement] = useState([]);
     const [showAlert, setShowAlert] = useState(false);
-    const { setProducts } = useProductContext();
+    const { setProducts } = useContext(SetProductContext);
 
     useEffect(() => {
         fetch("https://fakestoreapi.com/products")
