@@ -24,7 +24,7 @@ function Cart() {
 	return (
 		<>
 			<Navbar currentPage="cart" />
-			<div className="flex flex-wrap mt-8 gap-3 justify-evenly">
+			<div className="flex flex-wrap mt-4 gap-3 justify-center">
 				{products.length > 0 ? (
 					products.map((item) => (
 						<div
@@ -56,7 +56,7 @@ function Cart() {
 						</div>
 					))
 				) : (
-					<p>Your cart is empty</p>
+					<h3 className="text-3xl">Your cart is empty</h3>
 				)}
 			</div>
 		</>

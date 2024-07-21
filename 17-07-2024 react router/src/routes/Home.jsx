@@ -82,7 +82,8 @@ function Home() {
                 {element.map((item) => (
                     <div key={item.id} className="group relative block overflow-hidden w-1/6">
                         <div className="flex flex-col h-full border border-gray-300 bg-white rounded-2xl">
-                            <button className="absolute end-4 top-4 z-10 rounded-full bg-white p-1.5 text-gray-900 transition hover:text-gray-900/75">
+                            <button className="absolute end-4 top-4 z-10 rounded-full bg-white p-1.5 text-gray-900 transition hover:text-gray-900/75"
+                            onClick={() => handleAdd(item)}>
                                 <span className="sr-only">Wishlist</span>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
