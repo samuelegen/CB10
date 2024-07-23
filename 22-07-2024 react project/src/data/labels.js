@@ -3,5 +3,7 @@ export const labels = {
 	ProductsCategory: "Category",
 	ProductsPrice: "Price",
     ProductsRate: "Rating",
-	ProductsList: "Products list"
+	ProductsList: "Products list",
+	navHome: 'Home',
+	navTitle: 'Shop for everything',
 }

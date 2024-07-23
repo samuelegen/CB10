@@ -26,14 +26,15 @@
 // 	}
 // };
 
+const url = "https://fakestoreapi.com/products";
 
-const url = 'https://fakestoreapi.com/products';
-export const getraveList = async () => {
-try {
-	const response = await fetch(url);
-	const result = await response.json();
-	console.log(result);
-} catch (error) {
-	console.error(error);
-}
+export const getProductsList = async (id) => {
+	try {
+		const response = await fetch(id ? `${url}/${id}` : url);
+		const result = await response.json();
+		return result;
+	} catch (error) {
+		console.error(error);
+		throw error;
+	}
 };

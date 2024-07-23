@@ -1,29 +1,29 @@
 import { labels } from "./data/labels";
 import { useEffect, useState } from "react";
-import { getraveList } from "./api/travelClient";
+import { getProductsList } from "./api/ProductsClient";
 
 function App() {
-  const [traveList, setTraveList] = useState([]);
+  const [ProductsList, setProductsList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const getBooks = async () => {
+  const getList = async () => {
     try {
-      const data = await getraveList();
-      setTraveList(data);
+      const data = await getProductsList();
+      setProductsList(data);
     } catch (error) {
-      console.log("ciao pippo", error);
+      console.log(data);
     } finally {
       setIsLoading(false);
     }
   };
 
   useEffect(() => {
-    getBooks();
+    getList();
   }, []);
 
   useEffect(() => {
-    console.log(traveList);
-  }, [traveList]);
+    console.log(ProductsList);
+  }, [ProductsList]);
 
   if (isLoading) return <p>is loading..</p>;
 
@@ -37,7 +37,7 @@ function App() {
 
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
-              <thead className="ltr:text-left rtl:text-right">
+              <thead className="text-left">
                 <tr>
                   <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                     {labels.ProductsTitle}
@@ -56,74 +56,32 @@ function App() {
               </thead>
 
               <tbody className="divide-y divide-gray-200">
-                <tr>
-                  <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                    John Doe
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                    24/05/1995
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                    Web Developer
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                    $120,000
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2">
-                    <a
-                      href="#"
-                      className="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
-                    >
-                      View
-                    </a>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                    Jane Doe
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                    04/11/1980
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                    Web Designer
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                    $100,000
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2">
-                    <a
-                      href="#"
-                      className="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
-                    >
-                      View
-                    </a>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                    Gary Barlow
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                    24/05/1995
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                    Singer
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                    $20,000
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2">
-                    <a
-                      href="#"
-                      className="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
-                    >
-                      View
-                    </a>
-                  </td>
-                </tr>
+                {ProductsList.map((product) => {
+                  return (
+                    <tr key={product.id}>
+                      <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                        {product.title}
+                      </td>
+                      <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                        {product.rating.rate}
+                      </td>
+                      <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                        {product.category}
+                      </td>
+                      <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                        ${product.price}
+                      </td>
+                      <td className="whitespace-nowrap px-4 py-2">
+                        <a
+                          href={`/product/${product.id}`}
+                          className="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
+                        >
+                          View
+                        </a>
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
