@@ -6,4 +6,5 @@ export const labels = {
 	ProductsList: "Products list",
 	navHome: 'Home',
 	navTitle: 'Shop for everything',
+	filterBookTitle: 'Filter protucts by title',
 }
