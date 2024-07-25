@@ -1,6 +1,7 @@
 import { labels } from "./data/labels";
 import { useEffect, useState } from "react";
 import { getProductsList } from "./api/ProductsClient";
+import { Link } from "react-router-dom";
 
 function App() {
 	const [ProductsList, setProductsList] = useState([]);
@@ -36,18 +37,17 @@ function App() {
 		<>
 			<div className="flex justify-center">
 				<main className="w-[1200px] ">
-					<div className="p-4 ">
+					<div className="p-4 flex gap-36 ">
 						<h1 className="">{labels.ProductsList}</h1>
-					</div>
-
-					<div>
-						<h2>{labels.filterBookTitle}</h2>
-						<input
-							type="text"
-							placeholder="ciao"
-							value={filter}
-							onChange={handleChange}
-						/>
+						<div>
+							<h2>{labels.filterBookTitle}</h2>
+							<input
+								className="border-solid border-2 border-black"
+								type="text"
+								value={filter}
+								onChange={handleChange}
+							/>
+						</div>
 					</div>
 
 					<div className="overflow-x-auto">
@@ -80,7 +80,7 @@ function App() {
 												{product.title}
 											</td>
 											<td className="whitespace-nowrap px-4 py-2 text-gray-700">
-												{product.rating.rate}
+												{product.rating.rate} ⭐
 											</td>
 											<td className="whitespace-nowrap px-4 py-2 text-gray-700">
 												{product.category}
@@ -89,12 +89,12 @@ function App() {
 												${product.price}
 											</td>
 											<td className="whitespace-nowrap px-4 py-2">
-												<a
-													href={`/product/${product.id}`}
+												<Link
+													to={`/product/${product.id}`}
 													className="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
 												>
 													View
-												</a>
+												</Link>
 											</td>
 										</tr>
 									);
