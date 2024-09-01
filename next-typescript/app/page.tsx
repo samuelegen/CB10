@@ -1,6 +1,7 @@
 import React from "react";
 import Card, { ICard } from "@/components/card";
 import '@/app/globals.css'
+import { sevillana } from "./layout";
 
 const monuments: ICard[] = [
 	{
@@ -80,7 +81,7 @@ const monuments: ICard[] = [
 export default function Home() {
 	return (
 		<main className="flex flex-wrap justify-center">
-			<div className="font-dancing w-full h-20 flex justify-center items-center text-3xl">
+			<div className={`${sevillana.className} relative z-10 w-full h-20 flex justify-center items-center text-3xl bg-slate-600 bg-opacity-50 mb-3.5`}>
 				<h1>The Sicilian Dream</h1>
 			</div>
 			{monuments.map((monument) => (

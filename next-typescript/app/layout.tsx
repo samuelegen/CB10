@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Sevillana } from "next/font/google";
 import "./globals.css";
+
+export const sevillana = Sevillana({
+  subsets: ["latin"],
+  display: "swap",
+  weight: "400",
+});
 
 const inter = Inter({ subsets: ["latin"] });
 
