@@ -17,7 +17,7 @@ const Card: React.FC<CardProps> = ({ post }) => {
 	return (
 		<article
 			key={post.id}
-			className="max-w-sm rounded overflow-hidden shadow-lg m-4 hover:scale-110 duration-300"
+			className="max-w-sm rounded overflow-hidden shadow-lg m-4 hover:scale-110 duration-300 bg-slate-400"
 		>
 			<div className="w-full h-48 overflow-hidden">
 				<img

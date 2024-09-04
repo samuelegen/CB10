@@ -1,6 +1,6 @@
 import React from "react";
 import Card, { ICard } from "@/components/card";
-import '@/app/globals.css'
+import "@/app/globals.css";
 import { sevillana } from "./layout";
 
 const monuments: ICard[] = [
@@ -19,8 +19,7 @@ const monuments: ICard[] = [
 		title: "Teatro Massimo",
 		description:
 			"Il più grande teatro lirico in Italia e uno dei più grandi d'Europa.",
-		imageUrl:
-			"https://img0.oastatic.com/img2/77541936/max/variant.jpg",
+		imageUrl: "https://img0.oastatic.com/img2/77541936/max/variant.jpg",
 	},
 	{
 		id: "3",
@@ -28,13 +27,12 @@ const monuments: ICard[] = [
 		title: "Macari",
 		description:
 			"Il mare e le spiaggie di Macari sono tra le più belle della Sicilia",
-		imageUrl:
-			"https://www.mooway.it/public/1638824956-macari.jpg",
+		imageUrl: "https://www.mooway.it/public/1638824956-macari.jpg",
 	},
 	{
 		id: "4",
 		category: "Cultural",
-		title: "Parco delle madonie",
+		title: "Parco delle Madonie",
 		description:
 			"Il Parco delle Madonie è uno dei luoghi più straordinari di tutto il Mediterraneo per quanto riguarda la biodiversità. È anche Geopark UNESCO.",
 		imageUrl:
@@ -81,7 +79,16 @@ const monuments: ICard[] = [
 export default function Home() {
 	return (
 		<main className="flex flex-wrap justify-center">
-			<div className={`${sevillana.className} relative z-10 w-full h-20 flex justify-center items-center text-3xl bg-slate-600 bg-opacity-50 mb-3.5`}>
+			<video
+				className="fixed top-0 left-0 w-full h-full object-cover -z-10"
+				src="/Progetto senza titolo.mp4"
+				autoPlay
+				loop
+				muted
+			></video>
+			<div
+				className={`${sevillana.className} relative z-10 w-full h-20 flex justify-center items-center text-3xl bg-slate-700 bg-opacity-50 mb-3.5`}
+			>
 				<h1>The Sicilian Dream</h1>
 			</div>
 			{monuments.map((monument) => (
